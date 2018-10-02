@@ -15,4 +15,8 @@ class Friend extends Model
     public function user2() {
         $this->belongsTo('App\Models\Users', 'user2_id');
     }
+
+    public function conversations() {
+        $this->hasMany('App\Models\ConversationMessage');
+    }
 }
