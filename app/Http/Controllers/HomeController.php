@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function index()
+
     {
         $friends = Auth::user()->friends();
         foreach($friends as $friend) {
