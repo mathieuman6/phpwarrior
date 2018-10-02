@@ -29,4 +29,8 @@ class User extends Authenticatable
     ];
 
     protected $table = 'users';
+
+    public function friends() {
+        $this->hasMany('App\Models\Friend');
+    }
 }
