@@ -9,15 +9,15 @@ class Friend extends Model
     protected $table = 'friends';
 
     public function user1() {
-        $this->belongsTo('App\Models\User', 'user1_id');
+        return $this->belongsTo('App\Models\User', 'user1_id');
     }
 
     public function user2() {
-        $this->belongsTo('App\Models\User', 'user2_id');
+        return $this->belongsTo('App\Models\User', 'user2_id');
     }
 
     public function conversations() {
-        $this->hasMany('App\Models\ConversationMessage');
+        return $this->hasMany('App\Models\Conversation');
     }
 
     public function getFriend($user){

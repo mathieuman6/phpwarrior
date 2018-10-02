@@ -31,6 +31,13 @@ class User extends Authenticatable
     protected $table = 'users';
 
     public function friends() {
-        $this->hasMany('App\Models\Friend');
+        return $this->hasMany('App\Models\Friend','id');
+    }
+
+    public function getConversations(){
+        foreach ($this->friends() as $friend){
+            return $friend = $friend->conversations();
+        }
+
     }
 }
