@@ -11,15 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('', 'HomeController@index')->name('index');
 
-Route::prefix('test', function() {
+    Route::get('friend', 'FriendController@index')->name('friend.index');
+    Route::post('friend', 'FriendController@add')->name('friend.add');
+
+    Route::get('conversation', 'ConversationController@index')->name('conversation.index');
+});
+
+Route::prefix('test')->group(function () {
     Route::get('', function() {
         return view('home');
     });
