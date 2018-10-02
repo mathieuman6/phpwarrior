@@ -15,11 +15,11 @@ class CreateConversationMessagesTable extends Migration
     {
         Schema::create('conversation_messages', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('conversation_id');
+            $table->integer('user_id');
+            $table->string('message');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
-            $table->integer('idConv');
-            $table->integer('idUser1');
-            $table->string('msg');
-
         });
     }
 
