@@ -17,8 +17,8 @@ class CreateConversationsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('titre');
-            $table->int('user_id1');
-            $table->int('user_id2');
+            $table->integer('user_id1');
+            $table->integer('user_id2');
         });
     }
 
