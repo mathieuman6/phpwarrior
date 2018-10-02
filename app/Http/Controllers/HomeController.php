@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $friends = Friend::friends();
+        $friends = Auth::user()->friends();
         foreach($friends as $friend) {
             $friend = $friend->getFriend(Auth::user());
         }

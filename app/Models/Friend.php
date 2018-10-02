@@ -9,11 +9,11 @@ class Friend extends Model
     protected $table = 'friends';
 
     public function user1() {
-        $this->belongsTo('App\Models\Users', 'user1_id');
+        $this->belongsTo('App\Models\User', 'user1_id');
     }
 
     public function user2() {
-        $this->belongsTo('App\Models\Users', 'user2_id');
+        $this->belongsTo('App\Models\User', 'user2_id');
     }
 
     public function conversations() {
