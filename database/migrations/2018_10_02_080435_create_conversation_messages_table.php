@@ -19,6 +19,7 @@ class CreateConversationMessagesTable extends Migration
             $table->integer('idConv');
             $table->integer('idUser1');
             $table->string('msg');
+
         });
     }
 
