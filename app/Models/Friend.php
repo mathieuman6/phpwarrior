@@ -19,4 +19,13 @@ class Friend extends Model
     public function conversations() {
         $this->hasMany('App\Models\ConversationMessage');
     }
+
+    public function getFriend($user){
+        if($this->user1() == $user){
+            return $this->user2();
+        }
+        else{
+            return $this->user1();
+        }
+    }
 }

@@ -8,11 +8,16 @@ class Conversation extends Model
 {
     protected $table = 'conversations';
 
-    public function conversation() {
+    public function conversationMessages() {
         $this->hasMany('App\Models\ConversationMessage');
     }
 
-    public function friends() {
+    public function friend() {
         $this->belongTo('App\Models\Friend');
+    }
+
+    public function getLastMessage()
+    {
+        return $this->conversationMessages()->last();
     }
 }
