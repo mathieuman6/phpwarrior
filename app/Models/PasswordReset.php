@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Conversation extends Model
+class PasswordReset extends Model
 {
     //
 }
