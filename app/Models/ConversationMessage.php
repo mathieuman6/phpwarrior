@@ -16,3 +16,4 @@ class ConversationMessage extends Model
         $this->belongsTo('App\Models\Conversation', 'conversation_id');
     }
 }
+
