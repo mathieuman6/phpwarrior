@@ -17,6 +17,8 @@ Route::middleware('auth')->group(function () {
     Route::get('', 'HomeController@index')->name('index');
 
     Route::post('friend', 'FriendController@add')->name('friend.add');
+    Route::get('friend/accept/{id}', 'FriendController@accept')->name('friend.accept');
+    Route::get('friend/refuse/{id}', 'FriendController@refuse')->name('friend.refuse');
 
     Route::get('conversation', 'ConversationController@index')->name('conversation.index');
 });

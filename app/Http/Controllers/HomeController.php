@@ -11,14 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function index()
-
     {
         $user = Auth::user();
-        $friendsC = $user->friends;
-        $friends = [];
-        foreach($friendsC as $friend) {
-            array_push($friends, $friend->getFriend($user));
-        }
+        $friends = $user->friends();
         $conversations = $user->getConversations();
         return view('home', [
             'friends' => $friends,

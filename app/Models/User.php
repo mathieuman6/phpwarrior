@@ -30,8 +30,16 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
+    public function friends1() {
+        return $this->hasMany('App\Models\Friend','user1_id');
+    }
+
+    public function friends2() {
+        return $this->hasMany('App\Models\Friend','user2_id');
+    }
+
     public function friends() {
-        return $this->hasMany('App\Models\Friend','id');
+        return $this->friends1->merge($this->friends2());
     }
 
     public function getConversations(){
