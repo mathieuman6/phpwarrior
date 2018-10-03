@@ -22,10 +22,10 @@ class Friend extends Model
 
     public function getFriend($user){
         if($this->user1() == $user){
-            return $this->user2();
+            return $this->user2;
         }
         else{
-            return $this->user1();
+            return $this->user1;
         }
     }
 }

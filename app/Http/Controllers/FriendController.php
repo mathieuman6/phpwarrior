@@ -6,11 +6,7 @@ use Illuminate\Http\Request;
 
 class FriendController extends Controller
 {
-    public function index() {
-
-    }
-
-    public function add() {
+    public function add(Request $request) {
 
     }
 }

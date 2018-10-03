@@ -36,7 +36,7 @@ class User extends Authenticatable
 
     public function getConversations(){
         foreach ($this->friends() as $friend){
-            return $friend = $friend->conversations();
+            return $friend = $friend->conversations;
         }
 
     }

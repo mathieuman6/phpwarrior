@@ -18,6 +18,6 @@ class Conversation extends Model
 
     public function getLastMessage()
     {
-        return $this->conversationMessages()->last();
+        return $this->conversationMessages->last();
     }
 }

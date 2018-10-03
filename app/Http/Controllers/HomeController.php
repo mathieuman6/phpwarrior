@@ -14,16 +14,16 @@ class HomeController extends Controller
 
     {
         $user = Auth::user();
-        $friends = $user->friends();
-        foreach($friends as $friend) {
-            $friend = $friend->getFriend($user);
+        $friendsC = $user->friends;
+        $friends = [];
+        foreach($friendsC as $friend) {
+            array_push($friends, $friend->getFriend($user));
         }
         $conversations = $user->getConversations();
-        dump($conversations);
         return view('home', [
             'friends' => $friends,
             'user' => $user,
-            'conversations' => $conversations
+            'conversations' => $conversations,
         ]);
     }
 }
