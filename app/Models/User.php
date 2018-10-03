@@ -39,7 +39,7 @@ class User extends Authenticatable
     }
 
     public function friends() {
-        return $this->friends1->merge($this->friends2());
+        return $this->friends1->merge($this->friends2);
     }
 
     public function getConversations(){
